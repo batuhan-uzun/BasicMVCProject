@@ -1,0 +1,41 @@
+﻿@model BasicMVCProject.Models.CustomerOrderViewModel
+
+<html>
+    <head>
+        <p>Welcome @Model.customer.FirstName @Model.customer.LastName !</p>
+    </head>
+
+    <body>
+
+        <p>Customer ID: @Model.customer.Id</p>
+        <p>Customer First Name: @Model.customer.FirstName</p>
+        <p>Customer Last Name: @Model.customer.LastName</p>
+        <p>Customer Email: @Model.customer.Email</p>
+
+
+    <table border="1" cellpadding="5" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Product Name</th>
+                <th>Product Price</th>
+                <th>Product Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in Model.orders) // All Model.orders items were printed to the table with foreach
+            {
+                <tr>
+                    <td>@order.Id</td>
+                    <td>@order.ProductName</td>
+                    <td>@order.Price</td>
+                    <td>@order.Quantity</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    </body>
+
+
+</html>
